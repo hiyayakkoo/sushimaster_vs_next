@@ -41,9 +41,16 @@ export default function Home() {
   const updateRating = async (winner, loser) => {
     if (ratingUpdateContract) {
       try {
+        // 現在のガス価格を取得
+        const currentGasPrice = await window.web3.eth.getGasPrice();
+        // ガス価格を20%増加させる
+        const increasedGasPrice = window.web3.utils.toBN(currentGasPrice).mul(window.web3.utils.toBN("120")).div(window.web3.utils.toBN("100"));
+
+        console.log( "winner :" , winner );
+        console.log( "loser : " , loser );
         await ratingUpdateContract.methods
             .updateRatingValue(winner, loser)
-            .send({ from: accounts[0] });
+            .send({ from: accounts[0],  gasPrice: increasedGasPrice });
       } catch (err) {
         console.error("エラーが発生しました:", err);
       }
