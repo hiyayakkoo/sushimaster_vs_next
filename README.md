@@ -1,7 +1,8 @@
 ## Sushi Master VS Next!!!
 
 This is a game with burning heart and skilled hands.
-And So now... We can fight in the blockchain world with your fist!!
+And So now... 
+We can fight in the blockchain world with your fist!!
 
 Can you survive in this world?
 
