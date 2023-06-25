@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+  margin: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+}
+
+.gameArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playerChoice,
+.cpuChoice,
+.versus {
+  padding: 1rem;
+}
+
+.versus {
+  font-size: 1.5rem;
+}
+
+.resultArea {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+button {
+  background: #61dafb;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+}
+
+button:hover {
+  background: #4aa0ca;
+  cursor: pointer;
+}
+
+h2 {
+  margin: 1rem 0;
+}
