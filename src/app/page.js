@@ -43,16 +43,12 @@ export default function Home() {
   const updateRating = async (winner, loser) => {
     if (ratingUpdateContract) {
       try {
-        // 現在のガス価格を取得
-        const currentGasPrice = await window.web3.eth.getGasPrice();
-        // ガス価格を20%増加させる
-        const increasedGasPrice = Math.floor(parseFloat(currentGasPrice) * 1000)
 
         console.log( "winner :" , winner );
         console.log( "loser : " , loser );
         await ratingUpdateContract.methods
             .updateRatingValue(winner, loser)
-            .send({ from: accounts[0],  gasPrice: increasedGasPrice });
+            .send({ from: accounts[0] });
       } catch (err) {
         console.error("エラーが発生しました:", err);
       }
