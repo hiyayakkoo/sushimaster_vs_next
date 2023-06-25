@@ -6,7 +6,7 @@ import RatingUpdateContractABI from "./contracts/RatingUpdate.json";
 import "./App.css";
 
 // コントラクトアドレスを定数として設定（適切な値に置き換えてください）
-const RATING_UPDATE_CONTRACT_ADDRESS = "0x07167774e345c22005CA50f134Fc3A148dD13dDb";
+const RATING_UPDATE_CONTRACT_ADDRESS = "0x1Bc3a68B365e58369B0a8F8b74EfAB82Fd19070d";
 const NPC_ADDRESS = "0xFEc125680918182BC8A9AF242145350074F0F951";
 
 
