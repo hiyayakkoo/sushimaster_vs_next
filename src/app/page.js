@@ -115,6 +115,18 @@ export default function Home() {
     }
   }
 
+  const getImageFilenameEnemy = (choice) => {
+    switch (choice) {
+      case "Rock":
+        return "enemy_sushimaster256_goo.png";
+      case "Scissors":
+        return "enemy_sushimaster256_choki.png";
+      case "Paper":
+        return "enemy_sushimaster256_paaaa.png";
+      default:
+        return "";
+    }
+  }
   return (
       <div className="App">
         <h1>Rock Paper Scissors Game</h1>
@@ -155,7 +167,7 @@ export default function Home() {
           <div className="cpuChoice">
             <h2>CPU's choice: {cpuChoice}</h2>
             {cpuChoice && (
-                <img src={getImageFilename(cpuChoice)} alt={cpuChoice} />
+                <img src={getImageFilenameEnemy(cpuChoice)} alt={cpuChoice} />
             )}
           </div>
         </div>
