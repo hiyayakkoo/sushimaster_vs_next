@@ -7,6 +7,7 @@ import "./App.css";
 
 // コントラクトアドレスを定数として設定（適切な値に置き換えてください）
 const RATING_UPDATE_CONTRACT_ADDRESS = "0x07167774e345c22005CA50f134Fc3A148dD13dDb";
+const NPC_ADDRESS = "0xFEc125680918182BC8A9AF242145350074F0F951";
 
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
   const choices = ["Rock", "Scissors", "Paper"];
 
   useEffect(() => {
+    setCpuAddress( NPC_ADDRESS)
 
     if (window.ethereum) {
       window.web3 = new Web3(window.ethereum);
@@ -44,7 +46,7 @@ export default function Home() {
         // 現在のガス価格を取得
         const currentGasPrice = await window.web3.eth.getGasPrice();
         // ガス価格を20%増加させる
-        const increasedGasPrice = window.web3.utils.toBN(currentGasPrice).mul(window.web3.utils.toBN("120")).div(window.web3.utils.toBN("100"));
+        const increasedGasPrice = Math.floor(parseFloat(currentGasPrice) * 1000)
 
         console.log( "winner :" , winner );
         console.log( "loser : " , loser );
@@ -128,7 +130,7 @@ export default function Home() {
             <input
                 type="text"
                 value={cpuAddress}
-                onChange={(e) => setCpuAddress(e.target.value)}
+                disabled={true}
             />
           </label>
         </div>
